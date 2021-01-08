@@ -2,7 +2,6 @@ package com.will;
 
 public class BankAccount {
 
-
     public int balance;
     public String firstName;
     public String lastName;
@@ -19,19 +18,23 @@ public class BankAccount {
 
 
     public void withdraw(int num){
+        int count = 0;
     if (balance >= num) {
         balance -= num;
+        System.out.println("withdrew: " + num );
+        count++;
         }
     }
 
     public void deposit(int num) {
         if (num > 0) {
         balance += num;
+        System.out.println("Deposited: " + num);
         }
     }
 
     @Override
     public String toString() {
-        return "type: " + accountType + "\tOwner: " + firstName + " " + lastName + balance;
+        return "type: " + accountType + "\tOwner: " + firstName + " " + lastName + "\tBalance:" + balance;
     }
 }

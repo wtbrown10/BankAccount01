@@ -1,14 +1,27 @@
 package com.will;
 
-public class Checking {
-    public int accountNumber;
-    public int dailyLimit;
-    public int debitCard;
+public class Checking extends BankAccount{
+    private int dailyLimit;
+    private int dailyWithdrawn = 0;
 
 
-    public Checking(int accountNumber, int checkingBalance, int dailyLimit, int debitCard) {
-        this.accountNumber = accountNumber;
+    public Checking(int balance, String firstName, String lastName, String accountType, int ssn, int dailyLimit) {
+        super(balance, firstName, lastName, "checking", ssn);
         this.dailyLimit = dailyLimit;
-        this.debitCard = debitCard;
+
+    }
+
+    public void resetDailyWithdrawn(){
+        dailyWithdrawn = 0;
+    }
+
+    @Override
+    public void withdraw(int num) {
+        if (dailyWithdrawn + num > dailyLimit) {
+            System.out.println("Error over Limit");
+            return;
+        }
+        super.withdraw(num);
+        dailyWithdrawn += num;
     }
 }
