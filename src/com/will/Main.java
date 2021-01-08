@@ -6,7 +6,7 @@ public class Main {
 	// write your code here
        BankAccount myAcct = new BankAccount(10000, "Will", "Brown", "Account", 123456);
        Checking checkingAccount = new Checking(700000, "Tom", "Bell", "Checking", 987656, 50000);
-       SavingsAccount savings = new SavingsAccount(20000, "Alex", "Smith", "Savings", 12131, 50);
+       SavingsAccount savings = new SavingsAccount(20000, "Alex", "Smith", "Savings", 12131, 5);
         System.out.println(checkingAccount.toString());
         checkingAccount.deposit(4000);
         System.out.println(checkingAccount.toString());

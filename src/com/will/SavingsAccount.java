@@ -16,8 +16,10 @@ public class SavingsAccount extends BankAccount{
     }
 
     public void calculateInterest(){
-        System.out.println("debug interest: " + ((double)interest / 100));
-        balance += (int)(balance * (interest / 100));
+        System.out.println("interest Rate: " + ((double)interest / 100));
+        System.out.println("interest Earned: " + (int)(balance * ((double)interest / 100)) );
+        balance += (int)(balance * ((double)interest / 100));
+
     }
 
 }
