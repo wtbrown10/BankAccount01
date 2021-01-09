@@ -1,12 +1,12 @@
-package com.will;
+package com.Account;
 
 public class BankAccount {
 
     public int balance;
     public String firstName;
-    public String lastName;
-    public String accountType;
-    public int ssn;
+    private String lastName;
+    private String accountType;
+    private int ssn;
 
     public BankAccount(int balance, String firstName, String lastName, String accountType, int ssn) {
         this.balance = balance;
@@ -16,25 +16,31 @@ public class BankAccount {
         this.ssn = ssn;
     }
 
+    public void withdrawCounter() {
+        int count = 0;
+    }
+
 
     public void withdraw(int num){
-        int count = 0;
+
     if (balance >= num) {
         balance -= num;
-        System.out.println("withdrew: " + num );
-        count++;
-        }
+        System.out.println("withdrew: " + num/100 );
+    }
     }
 
     public void deposit(int num) {
         if (num > 0) {
         balance += num;
-        System.out.println("Deposited: " + num);
+        System.out.println("Deposited: " + num/100);
         }
     }
 
     @Override
     public String toString() {
-        return "type: " + accountType + "\tOwner: " + firstName + " " + lastName + "\tBalance:" + balance;
+        int dollar = balance / 100;
+        int cents = balance % 100;
+        String balanceF = "$" + dollar + "." + cents;
+        return "type: " + accountType + "\tOwner: " + firstName + " " + lastName + "\tBalance:" + balanceF;
     }
 }
