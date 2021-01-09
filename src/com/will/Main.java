@@ -1,9 +1,6 @@
 package com.will;
 
-import com.Account.BankAccount;
-import com.Account.Checking;
-import com.Account.InvestmentAccount;
-import com.Account.SavingsAccount;
+import com.Account.*;
 
 public class Main {
 
@@ -13,6 +10,7 @@ public class Main {
        Checking checkingAccount = new Checking(700000, "Tom", "Bell", "Checking", 987656, 50000);
        SavingsAccount savings = new SavingsAccount(20000, "Alex", "Smith", "Savings", 12131, 5);
         InvestmentAccount investment = new InvestmentAccount(50000, "David", "Strong", "Investment", 123456, 3);
+        CDInvestment cd = new CDInvestment(400000, "Sam", "Long", "CD" ,123456, 4);
         System.out.println(checkingAccount.toString());
         checkingAccount.deposit(4000);
         System.out.println(checkingAccount.toString());
@@ -24,6 +22,11 @@ public class Main {
         System.out.println(investment.toString());
         investment.applyInvestment();
         System.out.println(investment.toString());
+        System.out.println(cd.toString());
+        cd.checkIfInterest(3);
+        System.out.println(cd.toString());
+        cd.withdraw(2000);
+
 //        System.out.println(myAcct.toString());
 //        myAcct.deposit(50000);
 //        System.out.println(myAcct.toString());

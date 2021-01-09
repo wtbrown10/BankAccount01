@@ -2,8 +2,8 @@ package com.Account;
 
 public class BankAccount {
 
-    public int balance;
-    public String firstName;
+    protected int balance;
+    private String firstName;
     private String lastName;
     private String accountType;
     private int ssn;
@@ -22,11 +22,10 @@ public class BankAccount {
 
 
     public void withdraw(int num){
-
     if (balance >= num) {
-        balance -= num;
-        System.out.println("withdrew: " + num/100 );
-    }
+            balance -= num;
+            System.out.println("withdrew: " + num/100 );
+        }
     }
 
     public void deposit(int num) {
@@ -43,4 +42,5 @@ public class BankAccount {
         String balanceF = "$" + dollar + "." + cents;
         return "type: " + accountType + "\tOwner: " + firstName + " " + lastName + "\tBalance:" + balanceF;
     }
+
 }

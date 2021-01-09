@@ -1,11 +1,11 @@
 package com.Account;
 
 public class InvestmentAccount extends BankAccount{
-    private int investment;
+    protected int investment;
     private int period = 3;
 
     public InvestmentAccount(int balance, String firstName, String lastName, String accountType, int ssn, int investment) {
-        super(balance, firstName, lastName, "Investment", ssn);
+        super(balance, firstName, lastName, accountType, ssn);
         this.investment = investment;
     }
 
