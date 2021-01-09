@@ -4,6 +4,7 @@ public class InvestmentAccount extends BankAccount{
     protected int investment;
     private int period = 3;
 
+    // constructor
     public InvestmentAccount(int balance, String firstName, String lastName, String accountType, int ssn, int investment) {
         super(balance, firstName, lastName, accountType, ssn);
         this.investment = investment;
